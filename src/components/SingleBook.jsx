@@ -1,11 +1,13 @@
 import { Component } from "react";
 import { Card, Badge, Button } from "react-bootstrap";
 import CommentArea from "./CommentArea ";
+import AddComments from "./AddComment";
 
 class SingleBook extends Component {
   state = {
     selected: false,
-    viewComments: false
+    viewComments: false,
+    addComment: false
   };
 
   handleOnClick = () => {
@@ -46,6 +48,18 @@ class SingleBook extends Component {
           >
             {this.state.viewComments ? "Nascondi Commenti" : "Mostra Commenti"}
           </Button>
+
+          <Button
+            variant="info"
+            className="w-100"
+            onClick={() => {
+              this.setState({ selected: true, addComment: !this.state.addComment });
+            }}
+          >
+            Scrivi commento
+          </Button>
+
+          {this.state.addComment && <AddComments />}
         </Card.Body>
       </Card>
     );
