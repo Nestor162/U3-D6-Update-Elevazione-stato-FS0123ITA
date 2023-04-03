@@ -1,0 +1,10 @@
+.MyFooter {
+  background-color: #212529;
+  color: white;
+}
+
+.selected {
+  box-shadow: rgba(114, 110, 110, 0.35) 0px 5px 15px;
+  transform: scale(1.01);
+  transition: transform 100ms ease-in-out;
+}
