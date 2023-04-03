@@ -59,7 +59,7 @@ class SingleBook extends Component {
             Scrivi commento
           </Button>
 
-          {this.state.addComment && <AddComments />}
+          {this.state.addComment && <AddComments asin={this.props.book.asin} />}
         </Card.Body>
       </Card>
     );
