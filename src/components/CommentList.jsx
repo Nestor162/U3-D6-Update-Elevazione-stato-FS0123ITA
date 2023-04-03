@@ -2,7 +2,6 @@ import { Alert, ListGroup } from "react-bootstrap";
 
 const CommentList = props => {
   const currentComments = [...props.comments];
-  console.log(currentComments);
 
   if (currentComments.length < 1) {
     return (

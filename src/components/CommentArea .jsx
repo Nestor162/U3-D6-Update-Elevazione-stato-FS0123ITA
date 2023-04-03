@@ -22,7 +22,6 @@ class CommentArea extends Component {
       if (response.ok) {
         const data = await response.json();
         this.setState({ comments: data });
-        console.log(data);
       }
     } catch (error) {
       throw new Error(error);
