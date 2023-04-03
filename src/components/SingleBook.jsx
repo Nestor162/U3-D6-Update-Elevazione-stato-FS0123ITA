@@ -44,7 +44,7 @@ class SingleBook extends Component {
               this.setState({ selected: true, viewComments: !this.state.viewComments });
             }}
           >
-            Mostra Commenti
+            {this.state.viewComments ? "Nascondi Commenti" : "Mostra Commenti"}
           </Button>
         </Card.Body>
       </Card>
