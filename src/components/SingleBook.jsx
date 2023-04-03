@@ -35,7 +35,7 @@ class SingleBook extends Component {
             </Badge>
           </h5>
 
-          {this.state.viewComments && <CommentArea />}
+          {this.state.viewComments && <CommentArea asin={this.props.book.asin} />}
 
           <Button
             variant="primary"

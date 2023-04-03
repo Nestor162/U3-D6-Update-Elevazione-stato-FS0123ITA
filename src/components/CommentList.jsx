@@ -1,13 +1,21 @@
-import { ListGroup } from "react-bootstrap";
+import { Alert, ListGroup } from "react-bootstrap";
 
-const CommentList = () => {
+const CommentList = props => {
+  const currentComments = [...props.comments];
+  console.log(currentComments);
+
+  if (currentComments.length < 1) {
+    return (
+      <Alert variant="warning" className="mb-3">
+        Ancora non esistono commenti su questo libro!
+      </Alert>
+    );
+  }
   return (
-    <ListGroup>
-      <ListGroup.Item>Cras justo odio</ListGroup.Item>
-      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+    <ListGroup className="mb-3">
+      {currentComments.map(comment => {
+        return <ListGroup.Item>{comment.comment}</ListGroup.Item>;
+      })}
     </ListGroup>
   );
 };
