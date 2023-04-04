@@ -1,4 +1,4 @@
-import { Alert, ListGroup } from "react-bootstrap";
+import { Alert, Badge, ListGroup } from "react-bootstrap";
 
 const CommentList = props => {
   const currentComments = [...props.comments];
@@ -13,7 +13,15 @@ const CommentList = props => {
   return (
     <ListGroup className="mb-3">
       {currentComments.map(comment => {
-        return <ListGroup.Item>{comment.comment}</ListGroup.Item>;
+        return (
+          <ListGroup.Item>
+            <div className="text-truncate">
+              <em>{comment.author}</em>
+            </div>
+            <div>{comment.comment}</div>
+            <Badge bg="danger">Rating: {comment.rate}⭐</Badge>
+          </ListGroup.Item>
+        );
       })}
     </ListGroup>
   );
